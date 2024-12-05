@@ -37,10 +37,10 @@ public:
     QWidget *chatPage;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout;
-    QTextEdit *textEdit;
-    QListWidget *listWidget;
+    QTextEdit *roomTextEdit;
+    QListWidget *userListWidget;
     QHBoxLayout *horizontalLayout_2;
-    QLineEdit *lineEdit;
+    QLineEdit *sayLineEdit;
     QPushButton *sayButton;
     QPushButton *logoutButton;
     QWidget *loginPage;
@@ -51,8 +51,8 @@ public:
     QVBoxLayout *verticalLayout_2;
     QGridLayout *gridLayout;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
-    QLabel *usernameEdit;
+    QLineEdit *usernameEdit;
+    QLabel *label;
     QLineEdit *serverEdit;
     QSpacerItem *verticalSpacer;
     QPushButton *loginButton;
@@ -125,27 +125,27 @@ public:
         verticalLayout_3->setObjectName("verticalLayout_3");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        textEdit = new QTextEdit(chatPage);
-        textEdit->setObjectName("textEdit");
+        roomTextEdit = new QTextEdit(chatPage);
+        roomTextEdit->setObjectName("roomTextEdit");
 
-        horizontalLayout->addWidget(textEdit);
+        horizontalLayout->addWidget(roomTextEdit);
 
-        listWidget = new QListWidget(chatPage);
-        listWidget->setObjectName("listWidget");
-        listWidget->setMaximumSize(QSize(120, 16777215));
+        userListWidget = new QListWidget(chatPage);
+        userListWidget->setObjectName("userListWidget");
+        userListWidget->setMaximumSize(QSize(120, 16777215));
 
-        horizontalLayout->addWidget(listWidget);
+        horizontalLayout->addWidget(userListWidget);
 
 
         verticalLayout_3->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        lineEdit = new QLineEdit(chatPage);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setMinimumSize(QSize(0, 0));
+        sayLineEdit = new QLineEdit(chatPage);
+        sayLineEdit->setObjectName("sayLineEdit");
+        sayLineEdit->setMinimumSize(QSize(0, 0));
 
-        horizontalLayout_2->addWidget(lineEdit);
+        horizontalLayout_2->addWidget(sayLineEdit);
 
         sayButton = new QPushButton(chatPage);
         sayButton->setObjectName("sayButton");
@@ -188,15 +188,15 @@ public:
 
         gridLayout->addWidget(label_2, 0, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(loginFrame);
-        lineEdit_2->setObjectName("lineEdit_2");
-
-        gridLayout->addWidget(lineEdit_2, 1, 1, 1, 1);
-
-        usernameEdit = new QLabel(loginFrame);
+        usernameEdit = new QLineEdit(loginFrame);
         usernameEdit->setObjectName("usernameEdit");
 
-        gridLayout->addWidget(usernameEdit, 1, 0, 1, 1);
+        gridLayout->addWidget(usernameEdit, 1, 1, 1, 1);
+
+        label = new QLabel(loginFrame);
+        label->setObjectName("label");
+
+        gridLayout->addWidget(label, 1, 0, 1, 1);
 
         serverEdit = new QLineEdit(loginFrame);
         serverEdit->setObjectName("serverEdit");
@@ -247,7 +247,7 @@ public:
         sayButton->setText(QCoreApplication::translate("MainWindow", "\345\217\221\351\200\201", nullptr));
         logoutButton->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200\357\274\232", nullptr));
-        usernameEdit->setText(QCoreApplication::translate("MainWindow", "\346\230\265\347\247\260\357\274\232", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\346\230\265\347\247\260\357\274\232", nullptr));
         loginButton->setText(QCoreApplication::translate("MainWindow", "\347\231\273\345\275\225\350\201\212\345\244\251\345\256\244", nullptr));
     } // retranslateUi
 
